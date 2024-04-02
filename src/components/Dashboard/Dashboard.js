@@ -11,7 +11,8 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import io from "socket.io-client";
-const socket = io.connect("http://localhost:4000");
+import api from "../../services/api";
+const socket = io.connect(process.env.REACT_APP_BASE_URL);
 
 function Dashboard() {
   const [messages, setMessages] = useState([]);
@@ -69,8 +70,8 @@ function Dashboard() {
   }, [currentUser.id]);
 
   const getAllUsers = async () => {
-    await axios
-      .get("http://localhost:4000/api/user/all")
+    await api
+      .get("/api/user/all")
       .then((res) => {
         console.log(res?.data);
         const { user } = res?.data;
