@@ -122,7 +122,7 @@ function Chat() {
           <h1 className="text-xl font-semibold mb-4">
             {recipientUser?.name || "Select a user"}
           </h1>
-          <div className="flex flex-col mb-4">
+          <div className="flex flex-col">
             {messages.map((message) => (
               <div
                 key={message._id}
