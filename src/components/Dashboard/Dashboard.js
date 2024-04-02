@@ -12,6 +12,7 @@ import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import io from "socket.io-client";
 import api from "../../services/api";
+// dynamic be url
 const socket = io.connect(process.env.REACT_APP_BASE_URL);
 
 function Dashboard() {
